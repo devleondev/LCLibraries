@@ -96,7 +96,7 @@ static char kObservingKeyPath;
 
 #pragma mark - Private Method
 
-- (void)swizzled_observeValueForKeyPath:(NSString *)keyPath ofObject:(NSObject *)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+- (void)swizzled_observeValueForKeyPath:(NSString *)keyPath ofObject:(NSObject *)object change:(NSDictionary *)change context:(void *)context {
     
     [self swizzled_observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     
@@ -107,7 +107,7 @@ static char kObservingKeyPath;
     object.callback(keyPath, object, change, context);
 }
 
-- (void)dynamic_observeValueForKeyPath:(NSString *)keyPath ofObject:(NSObject *)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+- (void)dynamic_observeValueForKeyPath:(NSString *)keyPath ofObject:(NSObject *)object change:(NSDictionary *)change context:(void *)context {
     
     if(!object.callback) {
         return;
