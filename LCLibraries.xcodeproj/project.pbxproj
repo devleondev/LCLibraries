@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3521C8441BEA0AEC00C88B5B /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3521C8431BEA0AEC00C88B5B /* NSObject+KVO.m */; settings = {ASSET_TAGS = (); }; };
 		359588851B1B39CB0013CBA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 359588841B1B39CB0013CBA1 /* main.m */; };
 		359588881B1B39CB0013CBA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 359588871B1B39CB0013CBA1 /* AppDelegate.m */; };
 		3595888B1B1B39CB0013CBA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3595888A1B1B39CB0013CBA1 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3521C8421BEA0AEC00C88B5B /* NSObject+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
+		3521C8431BEA0AEC00C88B5B /* NSObject+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
 		3595887F1B1B39CB0013CBA1 /* LCLibraries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCLibraries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359588831B1B39CB0013CBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		359588841B1B39CB0013CBA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3521C83E1BEA0AC600C88B5B /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				3521C8421BEA0AEC00C88B5B /* NSObject+KVO.h */,
+				3521C8431BEA0AEC00C88B5B /* NSObject+KVO.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
 		359588761B1B39CB0013CBA1 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,7 @@
 		359588811B1B39CB0013CBA1 /* LCLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				3521C83E1BEA0AC600C88B5B /* NSObject */,
 				359588A81B1B3C9E0013CBA1 /* LCPageJumper */,
 				359588861B1B39CB0013CBA1 /* AppDelegate.h */,
 				359588871B1B39CB0013CBA1 /* AppDelegate.m */,
@@ -234,6 +247,7 @@
 			files = (
 				3595888B1B1B39CB0013CBA1 /* ViewController.m in Sources */,
 				359588AB1B1B3D770013CBA1 /* UIViewController+LCPageJumper.m in Sources */,
+				3521C8441BEA0AEC00C88B5B /* NSObject+KVO.m in Sources */,
 				359588881B1B39CB0013CBA1 /* AppDelegate.m in Sources */,
 				359588851B1B39CB0013CBA1 /* main.m in Sources */,
 			);
@@ -432,6 +446,7 @@
 				359588A41B1B39CB0013CBA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		359588A51B1B39CB0013CBA1 /* Build configuration list for PBXNativeTarget "LCLibrariesTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +455,7 @@
 				359588A71B1B39CB0013CBA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

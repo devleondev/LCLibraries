@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSObject+KVO.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self beginObserving:self.window keyPath:@"windowLevel" usingBlock:^(NSString *keyPath, id object, NSDictionary *change, void *context){
+        NSLog(@"%@", change);
+    }];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.window.windowLevel = 2.0;
+        
+        [self stopObserving:self.window];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.window.windowLevel = 3.0;
+        });
+    });
+    
     return YES;
 }
 
