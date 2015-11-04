@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3521C8441BEA0AEC00C88B5B /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3521C8431BEA0AEC00C88B5B /* NSObject+KVO.m */; settings = {ASSET_TAGS = (); }; };
 		359588851B1B39CB0013CBA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 359588841B1B39CB0013CBA1 /* main.m */; };
 		359588881B1B39CB0013CBA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 359588871B1B39CB0013CBA1 /* AppDelegate.m */; };
 		3595888B1B1B39CB0013CBA1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3595888A1B1B39CB0013CBA1 /* ViewController.m */; };
@@ -15,7 +14,9 @@
 		359588901B1B39CB0013CBA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3595888F1B1B39CB0013CBA1 /* Images.xcassets */; };
 		359588931B1B39CB0013CBA1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 359588911B1B39CB0013CBA1 /* LaunchScreen.xib */; };
 		3595889F1B1B39CB0013CBA1 /* LCLibrariesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3595889E1B1B39CB0013CBA1 /* LCLibrariesTests.m */; };
-		359588AB1B1B3D770013CBA1 /* UIViewController+LCPageJumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 359588AA1B1B3D770013CBA1 /* UIViewController+LCPageJumper.m */; };
+		35C4B7EB1BEA482E00DA352B /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C4B7E61BEA482E00DA352B /* NSObject+KVO.m */; };
+		35C4B7EC1BEA482E00DA352B /* UIViewController+LCPageJumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C4B7EA1BEA482E00DA352B /* UIViewController+LCPageJumper.m */; };
+		35E989F01BEA48F300614CF3 /* NSString+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E989EF1BEA48F300614CF3 /* NSString+Notification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3521C8421BEA0AEC00C88B5B /* NSObject+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
-		3521C8431BEA0AEC00C88B5B /* NSObject+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
 		3595887F1B1B39CB0013CBA1 /* LCLibraries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCLibraries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359588831B1B39CB0013CBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		359588841B1B39CB0013CBA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,8 +43,12 @@
 		359588981B1B39CB0013CBA1 /* LCLibrariesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCLibrariesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3595889D1B1B39CB0013CBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3595889E1B1B39CB0013CBA1 /* LCLibrariesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCLibrariesTests.m; sourceTree = "<group>"; };
-		359588A91B1B3D770013CBA1 /* UIViewController+LCPageJumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LCPageJumper.h"; sourceTree = "<group>"; };
-		359588AA1B1B3D770013CBA1 /* UIViewController+LCPageJumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LCPageJumper.m"; sourceTree = "<group>"; };
+		35C4B7E51BEA482E00DA352B /* NSObject+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
+		35C4B7E61BEA482E00DA352B /* NSObject+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
+		35C4B7E91BEA482E00DA352B /* UIViewController+LCPageJumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LCPageJumper.h"; sourceTree = "<group>"; };
+		35C4B7EA1BEA482E00DA352B /* UIViewController+LCPageJumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LCPageJumper.m"; sourceTree = "<group>"; };
+		35E989EE1BEA48F300614CF3 /* NSString+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Notification.h"; sourceTree = "<group>"; };
+		35E989EF1BEA48F300614CF3 /* NSString+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Notification.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3521C83E1BEA0AC600C88B5B /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				3521C8421BEA0AEC00C88B5B /* NSObject+KVO.h */,
-				3521C8431BEA0AEC00C88B5B /* NSObject+KVO.m */,
-			);
-			path = NSObject;
-			sourceTree = "<group>";
-		};
 		359588761B1B39CB0013CBA1 = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +90,7 @@
 		359588811B1B39CB0013CBA1 /* LCLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				3521C83E1BEA0AC600C88B5B /* NSObject */,
-				359588A81B1B3C9E0013CBA1 /* LCPageJumper */,
+				35C4B7E31BEA482E00DA352B /* Categories */,
 				359588861B1B39CB0013CBA1 /* AppDelegate.h */,
 				359588871B1B39CB0013CBA1 /* AppDelegate.m */,
 				359588891B1B39CB0013CBA1 /* ViewController.h */,
@@ -136,13 +129,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		359588A81B1B3C9E0013CBA1 /* LCPageJumper */ = {
+		35C4B7E31BEA482E00DA352B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				359588A91B1B3D770013CBA1 /* UIViewController+LCPageJumper.h */,
-				359588AA1B1B3D770013CBA1 /* UIViewController+LCPageJumper.m */,
+				35C4B7E41BEA482E00DA352B /* NSObject */,
+				35C4B7E71BEA482E00DA352B /* NSString */,
+				35C4B7E81BEA482E00DA352B /* UIViewController */,
 			);
-			path = LCPageJumper;
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		35C4B7E41BEA482E00DA352B /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				35C4B7E51BEA482E00DA352B /* NSObject+KVO.h */,
+				35C4B7E61BEA482E00DA352B /* NSObject+KVO.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		35C4B7E71BEA482E00DA352B /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				35E989EE1BEA48F300614CF3 /* NSString+Notification.h */,
+				35E989EF1BEA48F300614CF3 /* NSString+Notification.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		35C4B7E81BEA482E00DA352B /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				35C4B7E91BEA482E00DA352B /* UIViewController+LCPageJumper.h */,
+				35C4B7EA1BEA482E00DA352B /* UIViewController+LCPageJumper.m */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,10 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E989F01BEA48F300614CF3 /* NSString+Notification.m in Sources */,
+				35C4B7EB1BEA482E00DA352B /* NSObject+KVO.m in Sources */,
 				3595888B1B1B39CB0013CBA1 /* ViewController.m in Sources */,
-				359588AB1B1B3D770013CBA1 /* UIViewController+LCPageJumper.m in Sources */,
-				3521C8441BEA0AEC00C88B5B /* NSObject+KVO.m in Sources */,
 				359588881B1B39CB0013CBA1 /* AppDelegate.m in Sources */,
+				35C4B7EC1BEA482E00DA352B /* UIViewController+LCPageJumper.m in Sources */,
 				359588851B1B39CB0013CBA1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

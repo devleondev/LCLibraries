@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>76091C65-0F8B-46D6-89EF-65ED781C7CE2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>LCLibraries</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>80C40DFBABCEF887E39629BFB791CBB000F923E4</key>
 		<string>https://github.com/devleondev/LCLibraries.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LCLibraries.xcodeproj</string>
+	<string>LCLibraries.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>80C40DFBABCEF887E39629BFB791CBB000F923E4</key>
