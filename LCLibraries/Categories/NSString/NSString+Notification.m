@@ -14,24 +14,38 @@ static NSNotificationCenter *defaultCenter() {
 
 @implementation NSString (Notification)
 
-- (void)beginObservingUsingBlock:(void (^)(NSNotification *note))block{
-    [self beginObservingWithObject:nil usingBlock:block];
+#pragma mark - Post Notification
+
+- (void)post {
+    [self postWithObject:nil];
 }
 
-- (void)beginObservingWithObject:(id)object usingBlock:(void (^)(NSNotification *note))block{
-    [self beginObservingWithObject:object inQueue:[NSOperationQueue mainQueue] usingBlock:block];
+- (void)postWithObject:(id)object {
+    [self postWithObject:object userInfo:nil];
 }
 
-- (void)beginObservingWithObject:(id)object inQueue:(NSOperationQueue *)queue usingBlock:(void (^)(NSNotification *note))block{
-    [defaultCenter() addObserverForName:self object:object queue:queue usingBlock:block];
-}
-
-- (void)notify:(id)object {
-    [defaultCenter() postNotificationName:self object:object];
-}
-
-- (void)notify:(id)object userInfo:(NSDictionary *)userInfo {
+- (void)postWithObject:(id)object userInfo:(NSDictionary *)userInfo {
     [defaultCenter() postNotificationName:self object:object userInfo:userInfo];
+}
+
+#pragma mark - Observer Notification
+
+- (void)addObserver:(id)observer selector:(SEL)aSelector {
+    [self addObserver:observer selector:aSelector object:nil];
+}
+
+- (void)addObserver:(id)observer selector:(SEL)aSelector object:(id)anObject {
+    [defaultCenter() addObserver:observer selector:aSelector name:self object:anObject];
+}
+
+#pragma mark - Remove Notification
+
+- (void)removeObserver:(id)observer {
+    [self removeObserver:observer object:nil];
+}
+
+- (void)removeObserver:(id)observer object:(id)anObject {
+    [defaultCenter() removeObserver:observer name:self object:anObject];
 }
 
 @end
