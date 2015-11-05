@@ -51,6 +51,14 @@ static char kObservingKeyPath;
     return objc_getAssociatedObject(self, &kObservingKeyPath);
 }
 
+- (void)removeAssociatedObject:(id)object {
+    if(!object) {
+        return;
+    }
+    
+    objc_removeAssociatedObjects(object);
+}
+
 @end
 
 
@@ -91,24 +99,21 @@ static char kObservingKeyPath;
     NSAssert(target.observingKeyPath.length > 0, @"Without observingKeyPath can't be stoped");
     
     [target removeObserver:self forKeyPath:target.observingKeyPath];
+    [target removeAssociatedObject:target.callback];
+    [target removeAssociatedObject:target.observingKeyPath];
 }
 
 
 #pragma mark - Private Method
 
 - (void)swizzled_observeValueForKeyPath:(NSString *)keyPath ofObject:(NSObject *)object change:(NSDictionary *)change context:(void *)context {
-    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     [self swizzled_observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    
-    if(!object.callback) {
-        return;
-    }
-    
-    object.callback(keyPath, object, change, context);
+    [self dynamic_observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 - (void)dynamic_observeValueForKeyPath:(NSString *)keyPath ofObject:(NSObject *)object change:(NSDictionary *)change context:(void *)context {
-    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     if(!object.callback) {
         return;
     }

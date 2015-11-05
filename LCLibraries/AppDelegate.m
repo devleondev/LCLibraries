@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.m
 //  LCLibraries
@@ -15,6 +16,9 @@
 
 @implementation AppDelegate
 
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(NSObject *)object change:(NSDictionary *)change context:(void *)context {
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
