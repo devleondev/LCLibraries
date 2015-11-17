@@ -1,0 +1,16 @@
+PODS:
+  - FXBlurView (1.6.3)
+  - GPUImage (0.1.6)
+  - Masonry (0.6.1)
+
+DEPENDENCIES:
+  - FXBlurView
+  - GPUImage
+  - Masonry
+
+SPEC CHECKSUMS:
+  FXBlurView: c6d23f3d35af2c6282296a2930f61c6e2c788d01
+  GPUImage: 4675ce4a5370ca92fcea8623b2a08b8f0c51b940
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+
+COCOAPODS: 0.39.0
