@@ -23,7 +23,9 @@
 @end
 
 @implementation LCInfiniteLoopScrollView
-@synthesize pageIndex = _pageIndex;
+@synthesize pageIndex   = _pageIndex;
+@synthesize totalLayers = _totalLayers;
+
 @dynamic delegate;
 
 #pragma mark - Life Cycle
@@ -116,9 +118,16 @@
     }];
     
     [_totalLayers enumerateObjectsUsingBlock:^(CALayer *layer, NSUInteger idx, BOOL *stop){
-        layer.position = CGPointMake(self.center.x + self.frame.size.width * idx, self.center.y);
+        // should consider scroll direction.
+        CGRect frame = layer.frame;
+        frame.origin.x += self.frame.size.width * idx;
+        layer.frame = frame;
         [_containerView.layer addSublayer:layer];
     }];
+    
+    CGFloat contentOffsetX = self.frame.size.width * 1;
+    CGPoint offset = CGPointMake(contentOffsetX, 0);
+    [self setContentOffset:offset animated:NO];
 }
 
 - (void)updatePageIndex {
@@ -142,7 +151,10 @@
     else {
         _pageIndex = idx - 1;
     }
-    
+}
+
+- (void)updatePageIndexAndNotifyDelegate {
+    [self updatePageIndex];
     
     if(_lcDelegate && [_lcDelegate respondsToSelector:@selector(infiniteLoopScrollView:didScrollToPageIndex:)]) {
         [_lcDelegate infiniteLoopScrollView:self didScrollToPageIndex:_pageIndex];
@@ -155,7 +167,6 @@
     _layers = layers;
     [self configureLayers];
     [self layoutSublayers];
-    [self scrollToIndex:0 animated:NO];
     [self updatePageIndex];
 }
 
@@ -167,6 +178,7 @@
     CGFloat contentOffsetX = self.frame.size.width * (idx + 1);
     CGPoint offset = CGPointMake(contentOffsetX, 0);
     [self setContentOffset:offset animated:animated];
+    [self updatePageIndexAndNotifyDelegate];
 }
 
 #pragma mark - Helpers
@@ -176,22 +188,25 @@
         return nil;
     }
     
-    CGFloat scale = [UIScreen mainScreen].scale;
     CGRect rect = CGRectMake(0.0, 0.0,
-                             layer.bounds.size.width * scale,
-                             layer.bounds.size.height * scale);
-    UIGraphicsBeginImageContextWithOptions(rect.size, YES, 1.0);
+                             layer.bounds.size.width,
+                             layer.bounds.size.height);
+    CGFloat scale = [[UIScreen mainScreen] scale];
     
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextScaleCTM(context, scale, scale);
-    CGContextSetFillColorWithColor(context, layer.backgroundColor);
-    CGContextFillRect(context, rect);
+    CGContextSaveGState(context);
     [layer renderInContext:context];
-    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    CGImageRef cgImage = CGBitmapContextCreateImage(context);
+    UIImage *image = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    
+    CGContextRestoreGState(context);
     UIGraphicsEndImageContext();
     
     CALayer *captuedLayer = [CALayer layer];
-    captuedLayer.bounds = layer.bounds;
+    captuedLayer.frame = layer.frame;
     captuedLayer.contents = (__bridge id _Nullable)(image.CGImage);
     
     return captuedLayer;
@@ -228,11 +243,9 @@
         [_lcDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
     }
     
-    if(decelerate) {
-        return;
+    if(!decelerate) {
+        [self updatePageIndexAndNotifyDelegate];
     }
-    
-    [self updatePageIndex];
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
@@ -246,7 +259,7 @@
         [_lcDelegate scrollViewDidEndDecelerating:scrollView];
     }
     
-    [self updatePageIndex];
+    [self updatePageIndexAndNotifyDelegate];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {

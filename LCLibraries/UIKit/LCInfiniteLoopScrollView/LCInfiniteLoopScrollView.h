@@ -17,6 +17,8 @@
 // Set the layers to show, you can set layer of array or view of array, suggest layers.
 // May be views.
 @property (nonatomic, strong, readwrite) NSArray                               * _Nonnull layers;
+@property (nonatomic, strong, readwrite) NSArray                               * _Nonnull totalLayers;
+
 
 /**
  *  @author leon, 15-11-17 13:11:54
