@@ -26,6 +26,7 @@
     [self beginObserving:self.window keyPath:@"windowLevel" usingBlock:^(NSString *keyPath, id object, NSDictionary *change, void *context){
         
         NSLog(@"change:%@", change);
+        NSLog(@"change: %@", change);
         
     }];
     
